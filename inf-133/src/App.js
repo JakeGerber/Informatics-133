@@ -6,6 +6,8 @@ import "./Card.css"
 
 import { Card } from './Card';
 
+import { Weather } from './Weather';
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +21,11 @@ function App() {
         <Card title="Task-5" description="this is a thing" importance="high"/>
 
 
+
       </div>
+
+      <Weather />
+
     </div>
   );
 }
