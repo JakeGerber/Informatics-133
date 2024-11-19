@@ -5,16 +5,23 @@ import "./Card.css"
 export const Card = ({title, description, importance}) => {
 
     const backgroundColors = {
-        high: "#ff7f7f",
-        medium: "#ffda79",
-        low: "#a2d5c6"
+        high: "#F55D3E",
+        medium: "#F7CB15",
+        low: "#76bed0"
+    }
+
+    const borderColors = {
+        high: "#bd3f26",
+        medium: "#cca916",
+        low: "#478796"
     }
 
     var color = backgroundColors[importance]
+    var borderColor = borderColors[importance]
 
 
     return (
-    <div class="card" style={{ backgroundColor: color }}>
+    <div class="card" style={{ backgroundColor: color, borderColor: borderColor }}>
         <h1 class="card-title">Title: {title}</h1>
         <p>Description: {description}</p>
         <h2>Importance: {importance}</h2>

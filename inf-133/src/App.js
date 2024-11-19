@@ -11,7 +11,9 @@ import { Weather } from './Weather';
 function App() {
   return (
     <div className="App">
-      <h1>Tasks:</h1>
+      
+      <h1>Tasks</h1>
+      
       <div class="card-container">
         <Card title="Task-1" description="this is a test" importance="none"/>
         <Card title="Task-2" description="this is a test2" importance="low"/>
@@ -19,9 +21,6 @@ function App() {
         <Card title="Task-4" description="this is a test4" importance="high"/>
         <Card title="Task-5" description="this is a thing" importance="high"/>
         <Card title="Task-5" description="this is a thing" importance="high"/>
-
-
-
       </div>
 
       <Weather />
