@@ -28,3 +28,23 @@
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
+.delete-icon{
+    display: flex;
+    justify-content: flex-end;   
+    padding: 10px; 
+}
+
+.edit-icon {
+    display: flex;
+    justify-content: flex-end;
+    padding:10px;
+}
+
+.delete-icon:hover{
+
+}
+
+.edit-icon:hover{
+    
+}

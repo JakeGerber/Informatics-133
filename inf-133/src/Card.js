@@ -22,10 +22,12 @@ export const Card = ({title, description, importance, cardID}) => {
 
     return (
     <div class="card" style={{ backgroundColor: color, borderColor: borderColor }}>
+        <div class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></div>
         <h1 class="card-title">Title: {title}</h1>
         <p>Description: {description}</p>
         <h2>Importance: {importance}</h2>
         <h2>Card ID: {cardID}</h2>
+        <footer class="delete-icon"><i class="fa-solid fa-trash"></i></footer>
     </div>
     )
 }
