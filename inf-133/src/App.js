@@ -8,7 +8,7 @@ import { Card } from './Card';
 
 import { Weather } from './Weather';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 import {Home} from './Home';
@@ -20,16 +20,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 
-  const [cards, setCards] = useState([
-    { title: "Task-1", description: "this is a test", importance: "none"},
-    { title: "Task-2", description: "this is a test2", importance: "low" },
-    { title: "Task-3", description: "this is a test3", importance: "medium" },
-    { title: "Task-4", description: "this is a test4", importance: "high" },
-    { title: "Task-5", description: "this is a thing", importance: "high" },
-  ]);
+  const [cards, setCards] = useState(() => {
+    const storedCards = localStorage.getItem('cards');
+    return storedCards ? JSON.parse(storedCards) : [];
+  });
 
   const [cardID, setCardID] = useState(1);
 
+
+  useEffect(() => {
+    const storedCards = localStorage.getItem('cards');
+    console.log("Stored cards: ", storedCards)
+    if(storedCards){
+      setCards(JSON.parse(storedCards));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cards', JSON.stringify(cards));
+    console.log(cards)
+  }, [cards]);
 
   return (
     <div className="App">

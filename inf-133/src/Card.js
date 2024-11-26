@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Card.css"
 
-export const Card = ({title, description, importance, cardID}) => {
+export const Card = ({title, description, importance, cardID, onEdit, onDelete}) => {
 
     const backgroundColors = {
         high: "#F55D3E",
@@ -20,9 +20,9 @@ export const Card = ({title, description, importance, cardID}) => {
     var borderColor = borderColors[importance]
 
 
-    return (
+    return (    
     <div class="card" style={{ backgroundColor: color, borderColor: borderColor }}>
-        <div class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+        <div class="edit-icon"><button class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></button></div>
         <h1 class="card-title">Title: {title}</h1>
         <p>Description: {description}</p>
         <h2>Importance: {importance}</h2>

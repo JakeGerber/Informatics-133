@@ -21,6 +21,7 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     setCards([...cards, formData]);
     console.log(cardID);
 
