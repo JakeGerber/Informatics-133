@@ -8,7 +8,7 @@ import { Card } from './Card';
 import { Weather } from './Weather';
 
 
-
+//add a card, set the title, description, importance, and ID for new card
 export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
 
   const [formData, setFormData] = useState({
@@ -20,6 +20,8 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
 
   const navigate = useNavigate();
 
+  //on submit, set the cards again, now including the new one
+  //increment cardID by one, preparing for next cardID
   const handleSubmit = (e) => {
     e.preventDefault();
     setCards([...cards, formData]);
@@ -29,6 +31,7 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
     navigate("/");
   };
 
+  //on form changing, save the data incase user exits tab (?)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({

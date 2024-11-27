@@ -27,7 +27,7 @@ function App() {
 
   const [cardID, setCardID] = useState(1);
 
-
+  //on webpage load, read from localstorage and display any cards
   useEffect(() => {
     const storedCards = localStorage.getItem('cards');
     console.log("Stored cards: ", storedCards)
@@ -36,6 +36,8 @@ function App() {
     }
   }, []);
 
+  //any time a card is updated, update the storage
+  //useEffects are so cool
   useEffect(() => {
     localStorage.setItem('cards', JSON.stringify(cards));
     console.log(cards)
