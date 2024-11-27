@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
+
+
 export const Weather = () => {
 
     const [info, setInfo] = useState("");
@@ -7,7 +9,9 @@ export const Weather = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=33.6458956&lon=-117.842799&appid=4125797745f2c41451cf29d3dc941da0")
+            const apikey = process.env.REACT_APP_API_KEY
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=33.6458956&lon=-117.842799&appid=${encodeURIComponent(apikey)}`;
+            const response = await fetch(url)
 
             const result = await response.json();
 
