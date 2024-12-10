@@ -45,10 +45,11 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
 
   
   return (
-    <div>
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
+    <div class="label">
+      <h1>New Task</h1>
+    <form onSubmit={handleSubmit} class="add-form">
+      <div class="form-item">
+        <label class="label">
           Title:
           <input
             type="text"
@@ -59,8 +60,8 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
           />
         </label>
       </div>
-      <div>
-        <label>
+      <div class="form-item">
+        <label class="label">
           Description:
           <textarea
             name="description"
@@ -70,8 +71,8 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
           />
         </label>
       </div>
-      <div>
-        <label>
+      <div class="form-item">
+        <label class="label">
           Importance:
           <select
             name="importance"

@@ -21,7 +21,13 @@ export const Home = ({ cards }) => {
 
     return (
         <div>
-    <h1>Tasks</h1>
+          <div class="navbar">
+            <h1 class="title">Tasks</h1>
+            <iframe class="date-time" src="https://free.timeanddate.com/clock/i9o5ubwc/n840/fn8/tct/pct/ahr/ftb/pd2/tt0/tw1/tm1/ts1/ta1/tb4" frameborder="0" width="145" height="34" allowtransparency="true"></iframe>     
+
+          </div>
+          
+        
       
     <div class="card-container">
 
@@ -38,7 +44,7 @@ export const Home = ({ cards }) => {
 
     <Weather />
 
-    <button onClick={handleClickTask}>
+    <button class="add-task-button" onClick={handleClickTask}>
       Add Task
     </button>
 
