@@ -7,15 +7,20 @@ import { Card } from './Card';
 
 import { Weather } from './Weather';
 
+import { v4 as uuidv4 } from 'uuid';
 
 //add a card, set the title, description, importance, and ID for new card
-export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
+export const AddCard = ({ cards, setCards }) => {
+
+
+  const { v4: uuidv4 } = require('uuid');
 
   const [formData, setFormData] = useState({
     title: "",
     description: "",
     importance: "none",
-    cardID: cardID
+    typeOfTask: "other",
+    cardID: uuidv4()
   });
 
   const navigate = useNavigate();
@@ -25,9 +30,6 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setCards([...cards, formData]);
-    console.log(cardID);
-
-    setCardID(cardID+1);
     navigate("/");
   };
 
@@ -86,6 +88,26 @@ export const AddCard = ({ cards, setCards, cardID, setCardID }) => {
           </select>
         </label>
       </div>
+
+      <div class="form-item">
+        <div>
+            <label>
+              Type of Task:
+              <select
+                name="typeOfTask"
+                value={formData.typeOfTask}
+                onChange={handleChange}
+              >
+                <option value="other">Other</option>
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+
+
       <button type="submit">Add Task</button>
     </form>
     </div>

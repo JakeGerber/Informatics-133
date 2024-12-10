@@ -15,6 +15,8 @@ import {Home} from './Home';
 
 import {AddCard} from './AddCard';
 
+import { EditCard } from './EditCard';
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
@@ -25,7 +27,9 @@ function App() {
     return storedCards ? JSON.parse(storedCards) : [];
   });
 
-  const [cardID, setCardID] = useState(1);
+  const [currentCardID, setCurrentCardID] = useState(null);
+
+  //const [cardID, setCardID] = useState(1);
 
   //on webpage load, read from localstorage and display any cards
   useEffect(() => {
@@ -38,6 +42,7 @@ function App() {
 
   //any time a card is updated, update the storage
   //useEffects are so cool
+  
   useEffect(() => {
     localStorage.setItem('cards', JSON.stringify(cards));
     console.log(cards)
@@ -49,8 +54,9 @@ function App() {
         <Router>
         <Routes>
           <Route path="/">
-          <Route exact path="/" element={<Home cards={cards} />} />
-          <Route exact path="/add-card" element={<AddCard cards={cards} setCards={setCards} cardID={cardID} setCardID={setCardID} />} />
+          <Route exact path="/" element={<Home cards={cards} setCards={setCards} currentCardID={currentCardID} setCurrentCardID={setCurrentCardID} />} />
+          <Route exact path="/add-card" element={<AddCard cards={cards} setCards={setCards} />} />
+          <Route exact path="/edit-card" element={<EditCard cards={cards} setCards={setCards} currentCardID={currentCardID} setCurrentCardID={setCurrentCardID} />} />
           </Route>
         </Routes>
         </Router>

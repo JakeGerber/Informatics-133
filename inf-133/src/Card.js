@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Card.css"
 
-export const Card = ({title, description, importance, cardID}) => {
+export const Card = ({title, description, importance, typeOfTask, cardID, onDelete, onEdit}) => {
     //possible background colors depending on importance
     const backgroundColors = {
         high: "#F55D3E",
@@ -23,13 +23,18 @@ export const Card = ({title, description, importance, cardID}) => {
     //includes icons for edit and trash,
     //button for editing, will implement later
     return (    
-    <div class="card" style={{ backgroundColor: color, borderColor: borderColor }}>
-        <div class="edit-icon"><button class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></button></div>
-        <h1 class="card-title">Title: {title}</h1>
-        <p>Description: {description}</p>
-        <h2>Importance: {importance}</h2>
-        <h2>Card ID: {cardID}</h2>
-        <footer class="delete-icon"><i class="fa-solid fa-trash"></i></footer>
-    </div>
+        <div class="card" style={{ backgroundColor: color, borderColor: borderColor }}>
+            <div class="edit-icon"><button class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></button></div>
+            <h1 class="card-title">Title: {title}</h1>
+            <p>Description: {description}</p>
+            <h2>Importance: {importance}</h2>
+            <h2>Card ID: {cardID}</h2>
+            <h2>Type of Task: {typeOfTask}</h2>
+    
+            <button onClick={() => onDelete(cardID)}>delete</button>
+            <button onClick={() => onEdit(cardID)}>edit</button>
+    
+            <footer class="delete-icon"><i class="fa-solid fa-trash"></i></footer>
+        </div>
     )
 }
