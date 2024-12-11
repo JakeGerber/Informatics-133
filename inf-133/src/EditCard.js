@@ -43,12 +43,11 @@ export const EditCard = ({ cards, setCards, currentCardID, setCurrentCardID }) =
   
     
     return (
-
-
         <div>
+          <h1 class="label">Edit Task</h1>
         <form onSubmit={handleSubmit}>
-        <div>
-            <label>
+        <div clas="form-item">
+            <label class="label">
             Title:
             <input
                 type="text"
@@ -60,7 +59,7 @@ export const EditCard = ({ cards, setCards, currentCardID, setCurrentCardID }) =
             </label>
         </div>
         <div>
-            <label>
+            <label class="label">
             Description:
             <textarea
                 name="description"
@@ -71,7 +70,7 @@ export const EditCard = ({ cards, setCards, currentCardID, setCurrentCardID }) =
             </label>
         </div>
         <div>
-            <label>
+            <label class="label">
             Importance:
             <select
                 name="importance"
@@ -88,7 +87,7 @@ export const EditCard = ({ cards, setCards, currentCardID, setCurrentCardID }) =
 
 
         <div>
-        <label>
+        <label class="label">
           Type of Task:
           <select
             name="typeOfTask"
@@ -103,7 +102,7 @@ export const EditCard = ({ cards, setCards, currentCardID, setCurrentCardID }) =
       </div>
 
 
-        <button type="submit">Edit Task</button>
+        <button class="task-button" type="submit">Edit Task</button>
         </form>
         </div>
 

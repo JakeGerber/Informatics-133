@@ -10,6 +10,8 @@ import Calendar from "react-calendar";
 
 import 'react-calendar/dist/Calendar.css';
 
+import './calendar.css'
+
 
 export const Home = ({ cards, setCards, currentCardID, setCurrentCardID }) => {
 
@@ -71,17 +73,15 @@ export const Home = ({ cards, setCards, currentCardID, setCurrentCardID }) => {
 
           <div class="navbar">
             <h1 class="title">Tasks</h1>
+            <Weather />
             <iframe class="date-time" src="https://free.timeanddate.com/clock/i9o5ubwc/n840/fn8/tct/pct/ahr/ftb/pd2/tt0/tw1/tm1/ts1/ta1/tb4" frameborder="0" width="145" height="34" allowtransparency="true"></iframe>     
           </div>
 
 
 
-      <Calendar onChange={onChangeCalendarValue} value={calendarValue} />
 
-
-
-      
     <div class="card-container">
+    <Calendar class="calendar" onChange={onChangeCalendarValue} value={calendarValue} />
 
       {cards
       .map((card, index) => (
@@ -98,19 +98,19 @@ export const Home = ({ cards, setCards, currentCardID, setCurrentCardID }) => {
       ))}
     </div>
 
-    <Weather />
+    
 
-    <button onClick={handleClickTask}>
+    <button class="task-button"onClick={handleClickTask}>
       Add Task
     </button>
 
     
 
-    <button onClick={importanceSort}>
+    <button class="task-button" onClick={importanceSort}>
       Sort By importance
     </button>
 
-    <button onClick={alphabeticalSort}>
+    <button class="task-button" onClick={alphabeticalSort}>
       Sort By Alphabetical Order
     </button>
 

@@ -24,17 +24,12 @@ export const Card = ({title, description, importance, typeOfTask, cardID, onDele
     //button for editing, will implement later
     return (    
         <div class="card" style={{ backgroundColor: color, borderColor: borderColor }}>
-            <div class="edit-icon"><button class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></button></div>
+            <header class="edit-icon"><i onClick={() => onEdit(cardID)} class="fa-solid fa-pen-to-square"></i></header>
             <h1 class="card-title">Title: {title}</h1>
             <p>Description: {description}</p>
             <h2>Importance: {importance}</h2>
-            <h2>Card ID: {cardID}</h2>
             <h2>Type of Task: {typeOfTask}</h2>
-    
-            <button onClick={() => onDelete(cardID)}>delete</button>
-            <button onClick={() => onEdit(cardID)}>edit</button>
-    
-            <footer class="delete-icon"><i class="fa-solid fa-trash"></i></footer>
+            <footer class="delete-icon"><i onClick={() => onDelete(cardID)} class="fa-solid fa-trash"></i></footer>
         </div>
     )
 }

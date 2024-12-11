@@ -32,7 +32,9 @@
 .delete-icon{
     display: flex;
     justify-content: flex-end;   
-    padding: 10px; 
+    padding-top: 20px;
+    padding-right: 10px; 
+    
 }
 
 .edit-icon {
@@ -41,7 +43,7 @@
     padding:10px;
 }
 
-.add-task-button {
+.task-button {
     margin-left: 10px;
     border-radius: 3px;
     border-color: #9b9b9b;
@@ -49,7 +51,7 @@
     font-family:'Courier New', Courier, monospace;
 }
 
-.add-task-button:hover {
+.task-button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -69,6 +71,10 @@
 .form-item {
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.calendar {
+    background-color: blue;
 }
 
 

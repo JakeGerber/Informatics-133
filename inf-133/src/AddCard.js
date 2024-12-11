@@ -105,10 +105,7 @@ export const AddCard = ({ cards, setCards }) => {
             </label>
           </div>
         </div>
-
-
-
-      <button type="submit">Add Task</button>
+      <button class="task-button" type="submit">Add Task</button>
     </form>
     </div>
   )
